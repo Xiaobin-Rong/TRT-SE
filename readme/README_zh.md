@@ -25,8 +25,7 @@ trtexec.exe --onnx=[onnx_path] ---saveEngine=[save_path]
 | ONNX | ONNXRuntime | CPU | 8.6 | 21.0 | 7.6|
 | Engine |TensorRT| CUDA | 2.2 | 5.1 | 1.9 |
 
-其中推理速度的评估重复进行了 1000 次，这里推理速度的定义为：音频处理时长 / 音频总时长。可以看到 TensorRT 框架的推理速度比 ONNXRuntime 提升了将近 4 倍。
-
+其中推理使用的 CPU 为 13th Gen Intel(R) Core(TM) i9-13900HX @ 2.20 GHz，使用的 CUDA 为 NVIDIA GeForce RTX 4080 Laptop GPU。推理过程重复进行了 1000 次，据此得到平均和最大最小推理速度。这里推理速度的定义为：音频处理时长 / 音频总时长。可以看到 TensorRT 框架的推理速度比 ONNXRuntime 提升了将近 4 倍。
 
 ## 在线模型的部署
 在语音增强中，在线推理的应用场景更广泛且对模型的实时性要求更高，相应地，在线推理的部署也更复杂。在这里我们采用 **流式推理** 的方法，对实时数据流进行逐帧推理。在实现流式推理时，需要适当的数据缓冲机制、数据流管理和模型推理的流水线设计，以确保数据的连续性和推理的稳定性。
