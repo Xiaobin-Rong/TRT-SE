@@ -36,40 +36,40 @@ TensorRT 可以通过官网 https://developer.nvidia.com/tensorrt 下载，官�
 
 ### 2.2 配置
 #### 2.2.1. 文件配置
-    TensorRT 的配置与 cuDNN 的配置类似：
-    * 将 TensorRT 安装包中 `include` 目录下的文件复制到 CUDA 的 `include` 目录下；
-    * 将 TensorRT 安装包中 `lib` 目录下的所有 `lib` 文件复制到 CUDA 的 `lib\x64` 目录下；
-    * 将 TensorRT 安装包中 `lib` 目录下的所有 `dll` 文件复制到 CUDA 的 `bin` 目录下；
-    * 将 TensorRT 的 `bin` 路径添加到环境变量；
-    * 将 CUDA 的 `include`、`lib` 和 `bin` 路径添加到环境变量。
+TensorRT 的配置与 cuDNN 的配置类似：
+* 将 TensorRT 安装包中 `include` 目录下的文件复制到 CUDA 的 `include` 目录下；
+* 将 TensorRT 安装包中 `lib` 目录下的所有 `lib` 文件复制到 CUDA 的 `lib\x64` 目录下；
+* 将 TensorRT 安装包中 `lib` 目录下的所有 `dll` 文件复制到 CUDA 的 `bin` 目录下；
+* 将 TensorRT 的 `bin` 路径添加到环境变量；
+* 将 CUDA 的 `include`、`lib` 和 `bin` 路径添加到环境变量。
 
 #### 2.2.2 安装 tensorrt
-    * 进入 `TensorRT-8.5.1.7\python` 目录，该目录下有 tensorrt 的针对不同 python 版本的 `whl` 文件。我们虚拟环境中的 python 版本为 3.8，应该安装 `cp38` 对应的 `whl` 文件。
-    在该路径下打开终端命令行，进入虚拟环境后，运行：
-      ```
-      pip install tensorrt -8.5.1.7 - cp38-none -win_amd 64. whl
-      ```
-    * 进入 `TensorRT-8.5.1.7\graphsurgeon` 目录，在该路径下打开终端命令行，进入虚拟环境后，运行：
-      ```
-      pip install graphsurgeon -0.4.6 - py2.py3-none -any.whl
-      ```
-    * 进入 `TensorRT-8.5.1.7\onnx_graphsurgeon` 目录，在该路径下打开终端命令行，进入虚拟环境后，运行：
-      ```
-      pip install onnx_ graphsurgeon -0.3.12 - py2.py3-none -any.whl
-      ```
-    安装完成后，进入 python 环境，打印版本号等信息，若不报错则说明安装成功。
-    ```
-    import tensorrt as trt
-    print(trt .__ version __)
-    assert trt. Builder (trt. Logger ())
-    ```
+* 进入 `TensorRT-8.5.1.7\python` 目录，该目录下有 tensorrt 的针对不同 python 版本的 `whl` 文件。我们虚拟环境中的 python 版本为 3.8，应该安装 `cp38` 对应的 `whl` 文件。
+  在该路径下打开终端命令行，进入虚拟环境后，运行：
+  ```
+  pip install tensorrt -8.5.1.7 - cp38-none -win_amd 64. whl
+  ```
+* 进入 `TensorRT-8.5.1.7\graphsurgeon` 目录，在该路径下打开终端命令行，进入虚拟环境后，运行：
+  ```
+  pip install graphsurgeon -0.4.6 - py2.py3-none -any.whl
+  ```
+* 进入 `TensorRT-8.5.1.7\onnx_graphsurgeon` 目录，在该路径下打开终端命令行，进入虚拟环境后，运行：
+  ```
+  pip install onnx_ graphsurgeon -0.3.12 - py2.py3-none -any.whl
+  ```
+安装完成后，进入 python 环境，打印版本号等信息，若不报错则说明安装成功。
+```
+import tensorrt as trt
+print(trt .__ version __)
+assert trt. Builder (trt. Logger ())
+```
 
 #### 2.2.3 安装 pycuda
-    * 在 PyCUDA 下载网址 https://www.lfd.uci.edu/~gohlke/pythonlibs/#pycuda 上根据 CUDA 和 python 版本下载好合适的 PyCUDA `whl` 文件。
-    * 进入 `whl` 文件所在目录，在该路径下打开终端命令行，进入虚拟环境后，运行：
-      ```
-      pip install pycuda ‑2022.1+ cuda 116‑ cp 38‑ cp 38‑ win_amd 64. whl
-      ```
+* 在 PyCUDA 下载网址 https://www.lfd.uci.edu/~gohlke/pythonlibs/#pycuda 上根据 CUDA 和 python 版本下载好合适的 PyCUDA `whl` 文件。
+* 进入 `whl` 文件所在目录，在该路径下打开终端命令行，进入虚拟环境后，运行：
+```
+pip install pycuda ‑2022.1+ cuda 116‑ cp 38‑ cp 38‑ win_amd 64. whl
+```
 
 以上一系列的配置完成后，在使用 TensorRT 的编译工具对 ONNX 模型进行转换时，仍可能会报错：`Could not locate zlibwapi.dll. Please make sure it is in your library path!` <br>
 解决方案是：
