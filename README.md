@@ -26,7 +26,7 @@ trtexec.exe --onnx=[onnx_path] --saveEngine=[save_path]
 | ONNX | ONNXRuntime | CPU | 8.6 | 21.0 | 7.6|
 | Engine |TensorRT| CUDA | 2.2 | 5.1 | 1.9 |
 
-The evaluation of inference speed is repeated 1000 times. Here, the inference speed is defined as the processing time per audio duration. It can be observed that the inference speed of the TensorRT framework is nearly 4 times faster than ONNXRuntime.
+The CPU used for inference is the 13th Gen Intel(R) Core(TM) i9-13900HX @ 2.20 GHz, and the CUDA used is NVIDIA GeForce RTX 4080 Laptop GPU. The inference process was repeated 1000 times to obtain the average, maximum, and minimum inference speeds. Here, the inference speed is defined as the processing time per audio duration. It can be observed that the inference speed of the TensorRT framework is nearly 4 times faster than ONNXRuntime.
 
 ## Deployment of Online Models
 In speech enhancement, online inference has broader application scenarios and higher real-time requirements for the model. Consequently, the deployment of online inference is more complex. Here, we adopt the method of **streaming inference** to perform frame-by-frame inference on real-time data streams. When implementing streaming inference, appropriate data buffering mechanisms, data stream management, and pipeline design for model inference are required to ensure data continuity and stable inference.
