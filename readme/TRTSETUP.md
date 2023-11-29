@@ -1,4 +1,5 @@
 # TensorRT Installation Tutorial
+The Chinese version of the document can be found in: [TensorRT 安装教程](./TRTSETUP_zh.md)
 
 TensorRT is a deep learning inference engine developed by NVIDIA, designed to optimize and accelerate the inference process of deep learning models. It is specifically designed for deploying and efficiently executing deep learning models on NVIDIA GPUs. Models trained using frameworks such as PyTorch and TensorFlow can be converted to the TensorRT format and then utilized with the TensorRT inference engine to improve the model's runtime speed on GPUs. TensorRT is an ideal framework for deploying deep learning models on GPUs.
 
