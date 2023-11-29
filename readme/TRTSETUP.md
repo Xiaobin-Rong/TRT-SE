@@ -37,40 +37,40 @@ TensorRT can be downloaded from the official website https://developer.nvidia.co
 
 ### 2.2 Configuration
 #### 2.2.1 File Configuration
-   The configuration process for TensorRT is similar to that of cuDNN:
-   * Copy the files in the `include` directory of the TensorRT installation package to the `include` directory of CUDA.
-   * Copy all the `lib` files in the `lib` directory of the TensorRT installation package to the `lib\x64` directory of CUDA.
-   * Copy all the `dll` files in the `lib` directory of the TensorRT installation package to the `bin` directory of CUDA.
-   * Add the path to the `bin` directory of TensorRT to the environment variables.
-   * Add the paths to the `include`, `lib`, and `bin` directories of CUDA to the environment variables.
+The configuration process for TensorRT is similar to that of cuDNN:
+* Copy the files in the `include` directory of the TensorRT installation package to the `include` directory of CUDA.
+* Copy all the `lib` files in the `lib` directory of the TensorRT installation package to the `lib\x64` directory of CUDA.
+* Copy all the `dll` files in the `lib` directory of the TensorRT installation package to the `bin` directory of CUDA.
+* Add the path to the `bin` directory of TensorRT to the environment variables.
+* Add the paths to the `include`, `lib`, and `bin` directories of CUDA to the environment variables.
 
 #### 2.2.2 Install tensorrt
-   * Navigate to the `TensorRT-8.5.1.7\python` directory, which contains the `whl` files for different versions of TensorRT compatible with different Python versions. Since the Python version in the virtual environment is 3.8, install the `whl` file corresponding to `cp38`. In the terminal command line at this path, within the virtual environment, run:
-     ```
-     pip install tensorrt-8.5.1.7-cp38-none-win_amd64.whl
-     ```
-   * Navigate to the `TensorRT-8.5.1.7\graphsurgeon` directory. In the terminal command line at this path, within the virtual environment, run:
-     ```
-     pip install graphsurgeon-0.4.6-py2.py3-none-any.whl
-     ```
-   * Navigate to the `TensorRT-8.5.1.7\onnx_graphsurgeon` directory，In the terminal command line at this path, within the virtual environment, run:
-      ```
-      pip install onnx_ graphsurgeon -0.3.12 - py2.py3-none -any.whl
-      ```
-    After the installation is complete, enter the Python environment and print the version information. If no errors are reported, it indicates a successful installation.
-    ```
-    import tensorrt as trt
-    print(trt .__ version __)
-    assert trt. Builder (trt. Logger ())
-    ```
+* Navigate to the `TensorRT-8.5.1.7\python` directory, which contains the `whl` files for different versions of TensorRT compatible with different Python versions. Since the Python version in the virtual environment is 3.8, install the `whl` file corresponding to `cp38`. In the terminal command line at this path, within the virtual environment, run:
+  ```
+  pip install tensorrt-8.5.1.7-cp38-none-win_amd64.whl
+  ```
+* Navigate to the `TensorRT-8.5.1.7\graphsurgeon` directory. In the terminal command line at this path, within the virtual environment, run:
+  ```
+  pip install graphsurgeon-0.4.6-py2.py3-none-any.whl
+   ```
+* Navigate to the `TensorRT-8.5.1.7\onnx_graphsurgeon` directory，In the terminal command line at this path, within the virtual environment, run:
+  ```
+  pip install onnx_ graphsurgeon -0.3.12 - py2.py3-none -any.whl
+  ```
+After the installation is complete, enter the Python environment and print the version information. If no errors are reported, it indicates a successful installation.
+```
+import tensorrt as trt
+print(trt .__ version __)
+assert trt. Builder (trt. Logger ())
+```
 
 #### 2.2.3 Install PyCUDA
-   * Go to the PyCUDA download URL: https://www.lfd.uci.edu/~gohlke/pythonlibs/#pycuda and download the appropriate PyCUDA `.whl` file based on your CUDA and Python versions.
-   * Navigate to the directory where the `.whl` file is located. Open a terminal or command prompt at that path and activate your virtual environment.
-   * Run the following command:
-     ```
-     pip install pycuda‑2022.1+cuda116‑cp38‑cp38‑win_amd64.whl
-     ```
+* Go to the PyCUDA download URL: https://www.lfd.uci.edu/~gohlke/pythonlibs/#pycuda and download the appropriate PyCUDA `.whl` file based on your CUDA and Python versions.
+* Navigate to the directory where the `.whl` file is located. Open a terminal or command prompt at that path and activate your virtual environment.
+* Run the following command:
+```
+pip install pycuda‑2022.1+cuda116‑cp38‑cp38‑win_amd64.whl
+```
 
 After completing the above configurations, you may still encounter an error when using the TensorRT compilation tool to convert ONNX models: `Could not locate zlibwapi.dll. Please make sure it is in your library path!` 
 
