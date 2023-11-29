@@ -54,5 +54,5 @@ Similarly, we use the conversion tool `trtexec.exe` provided by TensorRT for mod
 The evaluation of inference speed is repeated 1000 times. Here, the inference speed is defined as the processing time per frame. As we can see, using TensorRT for inference is slower than using ONNXRuntime. This is because, for high-throughput streaming models, the data transfer between CUDA and CPU during TensorRT inference takes a certain amount of time. Only when the model's inference speed on the CPU becomes the bottleneck, using TensorRT for CUDA inference will have a positive effect.
 
 ## Acknowledgement
-The SE model used in this repository is [DPCRN](https://arxiv.org/abs/2107.05429), an excellent SE model ranked 2nd in DNS3 Challenge. The author is [Xiaohuai Le](https://github.com/Le-Xiaohuai-speech), my senior, who has taught me a lot, including the streaming conversion method employed in this repository.
+The SE model used in this repository is [DPCRN](https://arxiv.org/abs/2107.05429), an excellent SE model with high performance and low latency, which ranked 2nd in DNS3 Challenge. The author is [Xiaohuai Le](https://github.com/Le-Xiaohuai-speech), my senior, who has taught me a lot, including the streaming conversion method employed in this repository.
 
